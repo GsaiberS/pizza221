@@ -6,7 +6,7 @@ use App\Views\BaseTemplate;
 
 class HomeTemplate extends BaseTemplate
 {
-   public static function getTemplate(array $data = []): string
+   public static function getTemplate(array $pizza = []): string
    {
        $template = parent::getTemplate();
        // Путь к файлу data.json
@@ -29,17 +29,29 @@ class HomeTemplate extends BaseTemplate
        $pizzaCards = '';
        foreach ($pizzas as $pizza) {
            $pizzaCards .= <<<HTML
-<div class="col">
-   <div class="card h-100">
-       <img src="{$pizza['image']}" class="card-img-top" alt="{$pizza['name']}">
-       <div class="card-body">
-           <a href="http://localhost/products/{$pizza['id']}"><h5 class="card-title">{$pizza['name']}</h5></a>
-           <p class="card-text">{$pizza['description']}</p>
-           <p class="card-text"><strong>Цена: {$pizza['price']} ₽</strong></p>
-           <a href="#" class="btn btn-custom">Заказать</a>
-       </div>
-   </div>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4 mt-3">
+      <img src="{$pizza['image']}" class="img-fluid rounded-start" alt="{$pizza['name']}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{$pizza['name']}</h5>
+        <p class="card-text">{$pizza['description']}</p>
+        <h5 class="card-title"><strong>Цена: </strong>{$pizza['price']} руб.</h5>
+        <form class="mt-4" action="/basket" method="POST">
+          <input type="hidden" name="id" value="{$pizza['id']}">
+          <button type="submit" class="btn btn-custom">Добавить в корзину</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+
+
 HTML;
        }
 
@@ -95,7 +107,17 @@ HTML;
            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Тень для текста */
            border-radius: 30px; /* Скругление углов */
            overflow: hidden; /* Убедитесь, что содержимое не выходит за границы */
-       }           
+       }   
+       .btn-custom {
+            background-color: rgb(160, 87, 114); /* Основной цвет кнопки */
+            border-color: rgb(208,157,176); /* Цвет границы */
+            color: #ffffff; /* Цвет текста */
+        }
+        .btn-custom:hover {
+            background-color: rgb(180,130,150); /* Цвет при наведении */
+            border-color: rgb(180,130,150); /* Цвет границы при наведении */
+            color: #ffffff; /* Цвет текста */
+        }        
    </style>
    <main class="container mt-4">
    <section class="hero-section">
@@ -103,7 +125,7 @@ HTML;
        <div class="text-center">
            <h1 class="display-4 fw-bold">Добро пожаловать в пиццерию!</h1>
            <p class="lead">Лучшие ингредиенты, лучший вкус.</p>
-           <a href="#" class="btn btn-custom btn-lg">Заказать сейчас</a>
+           <a href="http://localhost/products" class="btn btn-custom">Заказать сейчас</a>
        </div>
    </div>
 </section>
