@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+<<<<<<< HEAD
 use App\Config\Config;
 use App\Models\Order;
 use App\Services\OrderDBStorage;
@@ -129,4 +130,19 @@ class OrderController {
             return false;
         }
     }
+=======
+use App\Models\Product;
+use App\Views\OrderTemplate;
+
+class OrderController {
+    public function get(): string {
+        $productModel = new Product();
+
+        $data = $productModel->getBasketData();
+
+        $orderTemplate = new OrderTemplate();
+
+        return $orderTemplate->getOrderTemplate($data);
+    }
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
 }

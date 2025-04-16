@@ -1,5 +1,8 @@
 <?php
+<<<<<<< HEAD
 
+=======
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
 namespace App\Views;
 
 class BaseTemplate
@@ -16,6 +19,7 @@ class BaseTemplate
             <!-- Bootstrap CSS -->
             <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
             <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<<<<<<< HEAD
             <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.x.x/dist/css/bootstrap.min.css" rel="stylesheet">
             <!-- Custom CSS -->
             <style>
@@ -103,6 +107,79 @@ class BaseTemplate
             </style>
             <script src="../../assets/css/bootstrap.bundle.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.x.x/dist/js/bootstrap.bundle.min.js"></script>
+=======
+            <!-- Custom CSS -->
+            <style>
+                body {
+                    font-family: 'Roboto', sans-serif; /* Устанавливаем современный шрифт */
+                    font-size: 16px; /* Базовый размер шрифта */
+                    line-height: 1.6; /* Межстрочный интервал */
+                    background-color: #f8f9fa; /* Светлый фон */
+                    color: #343a40; /* Темно-серый текст */
+                }
+                header {
+                    margin-bottom: 2rem; /* Отступ после заголовка */
+                }
+                .navbar-brand img {
+                    margin-right: 10px; /* Расстояние между логотипом и текстом */
+                }
+                .navbar-brand {
+                    font-size: 1.5rem; /* Размер текста в логотипе */
+                    font-weight: bold; /* Жирный шрифт */
+                    color: rgb(208,157,176) !important; /* Цвет текста логотипа */
+                }
+                .navbar-nav .nav-link {
+                    font-size: 1.1rem; /* Размер текста в меню */
+                    color: #343a40 !important; /* Цвет ссылок */
+                    margin-right: 1.5rem; /* Расстояние между кнопками */
+                }
+                .navbar-nav .nav-link:hover {
+                    color: rgb(208,157,176) !important; /* Цвет ссылок при наведении */
+                }
+                /* Стили для кнопок Bootstrap */
+                .btn-custom {
+                    background-color: rgb(208,157,176); /* Основной цвет кнопки */
+                    border-color: rgb(208,157,176); /* Цвет границы */
+                    color: #ffffff; /* Цвет текста */
+                }
+                .btn-custom:hover {
+                    background-color: rgb(180,130,150); /* Цвет при наведении */
+                    border-color: rgb(180,130,150); /* Цвет границы при наведении */
+                    color: #ffffff; /* Цвет текста */
+                }
+                .alert {
+                    margin-top: 1rem; /* Отступ сверху для flash-сообщений */
+                    border-radius: 0.5rem; /* Закругление углов */
+                }
+                main {
+                    min-height: 70vh; /* Минимальная высота контента */
+                }
+                footer {
+                    text-align: center; /* Текст по центру */
+                    padding: 1rem 0; /* Внутренние отступы */
+                    background-color: #343a40; /* Темный фон футера */
+                    color: #ffffff; /* Белый текст */
+                    font-size: 0.9rem; /* Размер текста футера */
+                }
+                .alert-custom {
+                    background-color: rgb(208,157,176); /* Фоновый цвет */
+                    border-color: rgb(208,157,176); /* Цвет границы */
+                    color: #ffffff; /* Цвет текста */
+                }
+
+                .alert-custom .btn-close {
+                    color: #ffffff; /* Цвет кнопки закрытия */
+                    opacity: 0.8; /* Прозрачность кнопки закрытия */
+                }
+
+                .alert-custom .btn-close:hover {
+                    color:rgb(141, 34, 123); /* Цвет кнопки закрытия при наведении */
+                    opacity: 1; /* Убираем прозрачность */
+                }
+            </style>
+            <!-- Bootstrap JS -->
+            <script src="../../assets/css/bootstrap.bundle.js"></script>
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
         </head>
         <body>
             <header>
@@ -116,6 +193,7 @@ class BaseTemplate
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNav">
+<<<<<<< HEAD
                             <ul class="navbar-nav me-auto">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="http://localhost/">
@@ -148,6 +226,20 @@ class BaseTemplate
                                         <li><a class="dropdown-item" href="http://localhost/register"><i class="fas fa-sign-in-alt"></i>Зарегистрироваться</a></li>
                                         <li><a class="dropdown-item" href="http://localhost/login"><i class="fas fa-user"></i>Войти</a></li>
                                     </ul>
+=======
+                            <ul class="navbar-nav"> <!-- Убран ms-auto -->
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="http://localhost/">Главная</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost/about">О нас</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost/products">Каталог</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://localhost/order">Заказ</a>
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
                                 </li>
                             </ul>
                         </div>
@@ -177,6 +269,7 @@ class BaseTemplate
                 %s
             </main>
 
+<<<<<<< HEAD
                     <footer class="mt-5 bg-dark text-white py-5">
             <div class="container">
                 <div class="row justify-content-between">
@@ -224,6 +317,11 @@ class BaseTemplate
                 </div>
             </div>
         </footer>
+=======
+            <footer class="mt-5">
+                © 2025 «Кемеровский кооперативный техникум»
+            </footer>
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
         </body>
         </html>
         HTML;

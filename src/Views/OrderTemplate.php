@@ -89,6 +89,7 @@ HTML;
                 <div class="sticky-top" style="top: 20px;">
                     <h4 class="text-center mb-4">Способ оплаты</h4>
                     <div class="d-flex flex-column gap-3">
+<<<<<<< HEAD
                         <button type="button" class="btn btn-outline-primary payment-option w-100" data-payment="sbp">
                             <i class="fas fa-qrcode"></i> По СБП
                         </button>
@@ -99,6 +100,18 @@ HTML;
                             <i class="fab fa-yandex"></i> Yandex Pay
                         </button>
                         <button type="button" class="btn btn-outline-primary payment-option w-100" data-payment="cash">
+=======
+                        <button type="button" class="btn btn-outline-primary payment-option">
+                            <i class="fas fa-qrcode"></i> По СБП
+                        </button>
+                        <button type="button" class="btn btn-outline-primary payment-option">
+                            <i class="fas fa-credit-card"></i> По номеру карты
+                        </button>
+                        <button type="button" class="btn btn-outline-primary payment-option">
+                            <i class="fab fa-yandex"></i> Yandex Pay
+                        </button>
+                        <button type="button" class="btn btn-outline-primary payment-option">
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
                             <i class="fas fa-money-bill-wave"></i> При получении
                         </button>
                     </div>
@@ -111,6 +124,7 @@ HTML;
         $content .= <<<HTML
         <div class="card mt-4" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
             <div class="card-body">
+<<<<<<< HEAD
                 <h4 class="text-center mb-4">Оформление заказа</h4>
                 <form action="/order" method="POST" id="order-form">
                     <div class="mb-3">
@@ -132,6 +146,14 @@ HTML;
                     
                     <input type="hidden" id="selected-payment" name="payment_method" value="">
                     <button type="submit" class="btn btn-custom w-100" id="create-order-button">Создать заказ</button>
+=======
+                <form action="/order_submit" method="POST">
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Адрес доставки</label>
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Введите адрес доставки" required>
+                    </div>
+                    <button type="submit" class="btn btn-custom w-100">Оформить заказ</button>
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
                 </form>
             </div>
         </div>
@@ -145,11 +167,16 @@ HTML;
             </form>
         </div>
 
+<<<<<<< HEAD
         <!-- JavaScript для выбора способа оплаты и отключения кнопки -->
+=======
+        <!-- JavaScript для выбора способа оплаты -->
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
         <script>
         document.addEventListener('DOMContentLoaded', function () {
             // Находим все кнопки с классом payment-option
             const paymentButtons = document.querySelectorAll('.payment-option');
+<<<<<<< HEAD
             const selectedPaymentInput = document.getElementById('selected-payment');
             const orderForm = document.getElementById('order-form');
             const createOrderButton = document.getElementById('create-order-button');
@@ -162,6 +189,10 @@ HTML;
             }
 
             // Добавляем обработчик клика для каждой кнопки оплаты
+=======
+
+            // Добавляем обработчик клика для каждой кнопки
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
             paymentButtons.forEach(button => {
                 button.addEventListener('click', function () {
                     // Убираем активный класс у всех кнопок
@@ -169,6 +200,7 @@ HTML;
 
                     // Добавляем активный класс к выбранной кнопке
                     this.classList.add('active');
+<<<<<<< HEAD
 
                     // Устанавливаем значение выбранного способа оплаты
                     const paymentMethod = this.getAttribute('data-payment');
@@ -183,6 +215,10 @@ HTML;
                     alert('Пожалуйста, выберите способ оплаты.');
                 }
             });
+=======
+                });
+            });
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
         });
         </script>
 HTML;

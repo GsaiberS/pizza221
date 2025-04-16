@@ -1,5 +1,6 @@
 {
     "name": "kkt/pizza221",
+<<<<<<< HEAD
     "description": "Пиццерия на PHP с использованием MVC",
     "type": "project",
     "require": {
@@ -21,5 +22,23 @@
         "squizlabs/php_codesniffer": "^3.12",
         "phpstan/phpstan": "^2.1",
         "phpunit/phpunit": "^10.5"
+=======
+    "version": "1.0.0",
+    "description": "Пиццерия на PHP с использованием MVC",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "scripts": {
+        "start": "php -S localhost:8000"
+    },
+    "require-dev": {
+        "phpmetrics/phpmetrics": "^2.8"
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
     }
 }

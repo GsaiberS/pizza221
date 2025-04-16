@@ -17,6 +17,7 @@ class ProductTemplate extends BaseTemplate
             'sauce' => [],
         ];
 
+<<<<<<< HEAD
         // Массив соответствия ключей категорий и их русскоязычных названий
         $categoryNames = [
             'pizza' => 'Пицца',
@@ -25,12 +26,15 @@ class ProductTemplate extends BaseTemplate
             'sauce' => 'Соусы',
         ];
 
+=======
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
         foreach ($arr as $item) {
             if (isset($categories[$item['category']])) {
                 $categories[$item['category']][] = $item;
             }
         }
 
+<<<<<<< HEAD
         // Генерация меню категорий с использованием русскоязычных названий
         $menuItems = '';
         foreach ($categoryNames as $key => $name) {
@@ -41,11 +45,29 @@ class ProductTemplate extends BaseTemplate
 HTML;
         }
 
+=======
+        // Меню категорий с фиксацией на экране и центрированием
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
         $menu = <<<HTML
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4" style="position: sticky; top: 0; z-index: 1000;">
             <div class="container-fluid">
                 <ul class="navbar-nav justify-content-center w-100">
+<<<<<<< HEAD
                     $menuItems
+=======
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pizza">Пицца</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#snack">Закуска</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#drink">Напиток</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sauce">Соусы</a>
+                    </li>
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
                 </ul>
             </div>
         </nav>
@@ -72,10 +94,15 @@ HTML;
         // Добавление меню
         $content .= $menu;
 
+<<<<<<< HEAD
         // Генерация разделов для каждой категории
         foreach ($categories as $category => $items) {
             $categoryName = $categoryNames[$category] ?? ucfirst($category); // Русское название или дефолтное
 
+=======
+        foreach ($categories as $category => $items) {
+            $categoryName = ucfirst($category); // Название категории
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
             $content .= <<<HTML
             <section id="$category" class="mb-5">
                 <h2 class="text-center mb-4">$categoryName</h2>
@@ -123,6 +150,7 @@ HTML;
      * @param array $data Данные о товаре (id, name, price, image, description и т.д.)
      * @return string HTML-код карточки товара
      */
+<<<<<<< HEAD
     public static function getCardTemplate(array $data = null): string
 {
     $template = parent::getTemplate();
@@ -160,4 +188,36 @@ HTML;
     $resultTemplate = sprintf($template, $title, $content);
     return $resultTemplate;
 }
+=======
+    public static function getCardTemplate(array $data): string
+    {
+        $template = parent::getTemplate();
+        $title = 'Карточка товара';
+
+        // Содержимое страницы
+        $content = <<<HTML
+        <div class="card mb-3" style="max-width: 540px; margin: 0 auto;">
+            <div class="row g-0">
+                <div class="col-md-4 mt-3">
+                    <img src="{$data['image']}" class="img-fluid rounded-start" alt="{$data['name']}" style="height: 150px; object-fit: cover;">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{$data['name']}</h5>
+                        <p class="card-text">{$data['description']}</p>
+                        <h5 class="card-title"><strong>Цена:</strong> {$data['price']} руб.</h5>
+                        <form class="mt-4" action="/basket" method="POST">
+                            <input type="hidden" name="id" value="{$data['id']}">
+                            <button type="submit" class="btn btn-custom">Добавить в корзину</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+HTML;
+
+        $resultTemplate = sprintf($template, $title, $content);
+        return $resultTemplate;
+    }
+>>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
 }
