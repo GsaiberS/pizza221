@@ -13,7 +13,6 @@ class AboutTemplate extends BaseTemplate
         <!-- Подключение Font Awesome -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
-<<<<<<< HEAD
         <!-- Стили -->
         <style>
             /* Основные цвета */
@@ -108,8 +107,6 @@ class AboutTemplate extends BaseTemplate
             }
         </style>
 
-=======
->>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
         <div class="container mt-5">
             <h1 class="text-center mb-4">О нас</h1>
             <p class="lead text-center">
@@ -122,13 +119,8 @@ class AboutTemplate extends BaseTemplate
                     <h3 class="mb-4"><i class="fas fa-info-circle me-2"></i>Контактная информация</h3>
                     <ul class="list-unstyled">
                         <li><i class="fas fa-map-marker-alt me-2"></i>Адрес: г. Кемерово, ул. Ленина, 123</li>
-<<<<<<< HEAD
                         <li><i class="fas fa-phone me-2"></i>Телефон: +7 (777) 666 55 44</li>
                         <li><i class="fas fa-envelope me-2"></i>Email: Soborovets@gmail.com</li>
-=======
-                        <li><i class="fas fa-phone me-2"></i>Телефон: +7 (999) 123-45-67</li>
-                        <li><i class="fas fa-envelope me-2"></i>Email: info@example.com</li>
->>>>>>> 81eb876697f261033b16b1a38438cc72dbad5f88
                     </ul>
                 </div>
 
